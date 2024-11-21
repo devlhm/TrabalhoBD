@@ -1,0 +1,17 @@
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Infra.deps.json
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Infra.dll
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Infra.pdb
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Application.dll
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Domain.dll
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Application.pdb
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\bin\Debug\net8.0\Api.Domain.pdb
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.csproj.AssemblyReference.cache
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.AssemblyInfoInputs.cache
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.AssemblyInfo.cs
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.csproj.CoreCompileInputs.cache
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.csproj.Up2Date
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.dll
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\refint\Api.Infra.dll
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\Api.Infra.pdb
+C:\Users\luis.moraes\Documents\Projetos\TrabalhoBD\Api\Api.Infra\obj\Debug\net8.0\ref\Api.Infra.dll
