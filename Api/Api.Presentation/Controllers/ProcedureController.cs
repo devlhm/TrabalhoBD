@@ -9,18 +9,49 @@ namespace Api.Presentation.Controllers;
 public class ProcedureController(IProcedureService procedureService) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Schedule([FromBody] Procedure procedure)
+    public async Task<IActionResult> Schedule([FromBody] Procedimento request)
     {
-        if (await procedureService.Schedule(procedure))
+        try
+        {
+            await procedureService.Schedule(request);
             return Ok();
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
         
-        return BadRequest();
     }
 
     [HttpGet]
-    [Route("getAllFromMonth")]
     public async Task<IActionResult> GetAllFromMonth([FromQuery] int year, [FromQuery] int month)
     {
-        return Ok(await procedureService.GetAllFromMonth(year, month));
+        try
+        {
+            return Ok(await procedureService.GetAllFromMonth(year, month));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    [HttpDelete]
+    [Route("{id:int}")]
+    public async Task<IActionResult> CancelAppointment(int id)
+    {
+        try
+        {
+            await procedureService.CancelAppointment(id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
     }
 }

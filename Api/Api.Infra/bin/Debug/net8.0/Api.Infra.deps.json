@@ -103,18 +103,12 @@
           "Api.Domain": "1.0.0"
         },
         "runtime": {
-          "Api.Application.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Api.Application.dll": {}
         }
       },
       "Api.Domain/1.0.0": {
         "runtime": {
-          "Api.Domain.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Api.Domain.dll": {}
         }
       }
     }

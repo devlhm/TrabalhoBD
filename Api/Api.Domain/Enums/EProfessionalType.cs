@@ -1,7 +1,7 @@
 namespace Api.Domain.Enums;
 
-public enum ProfessionalType
+public enum EProfessionalType
 {
     Dermatologista,
-    Esteticista,
+    Esteticista
 }

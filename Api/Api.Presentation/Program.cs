@@ -1,9 +1,7 @@
 using Api.Application;
 using Api.Application.Interface.Repository;
 using Api.Application.Interface.Service;
-using Api.Infra;
 using Api.Infra.Repository;
-using Dapper.FluentMap;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +11,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddTransient<IProcedureService, ProcedureService>();
 builder.Services.AddTransient<IProcedureRepository, ProcedureRepository>();
+builder.Services.AddTransient<IInvoiceService, InvoiceService>();
+builder.Services.AddTransient<IInvoiceRepository, InvoiceRepository>();
+
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();
 

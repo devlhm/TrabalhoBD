@@ -4,6 +4,7 @@ namespace Api.Application.Interface.Service;
 
 public interface IProcedureService
 {
-    public Task<bool> Schedule(Procedure procedure);
-    public Task<List<Procedure>> GetAllFromMonth(int year, int month);
+    Task Schedule(Procedimento procedimento);
+    Task<List<Procedimento>> GetAllFromMonth(int year, int month);
+    Task CancelAppointment(int id);
 }
