@@ -1,6 +1,6 @@
 using Api.Domain.Enums;
 
-namespace Api.Application.Requests;
+namespace Api.Presentation.Requests;
 
 public record GetClientInvoicesByStatusRequest(
         string Cpf,

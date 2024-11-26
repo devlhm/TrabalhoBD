@@ -1,6 +1,5 @@
 using Api.Application.Interface.Service;
-using Api.Application.Requests;
-using Api.Domain.Enums;
+using Api.Presentation.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Presentation.Controllers;
@@ -10,7 +9,8 @@ namespace Api.Presentation.Controllers;
 public class InvoiceController(IInvoiceService invoiceService): ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] string cpf)
+    [Route("{cpf}")]
+    public async Task<IActionResult> Create([FromRoute] string cpf)
     {
         try
         {
@@ -44,7 +44,7 @@ public class InvoiceController(IInvoiceService invoiceService): ControllerBase
     {
         try
         {
-            await invoiceService.UpdateStatus(request.Cpf, request.Status);
+            await invoiceService.UpdateStatus(request.InvoiceId, request.Status);
             return Ok();
         }
         catch (Exception ex)
@@ -52,5 +52,19 @@ public class InvoiceController(IInvoiceService invoiceService): ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-    // TODO: comunicar pagamento? cancelar?
+
+    [HttpGet]
+    [Route("{cpf}")]
+    public async Task<IActionResult> GetAllFromClient([FromRoute] string cpf)
+    {
+        try
+        {
+            var invoices = await invoiceService.GetAllFromClient(cpf);
+            return Ok(invoices);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 }

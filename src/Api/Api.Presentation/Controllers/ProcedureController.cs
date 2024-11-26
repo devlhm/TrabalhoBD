@@ -28,11 +28,11 @@ public class ProcedureController(IProcedureService procedureService) : Controlle
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllFromMonth([FromQuery] int year, [FromQuery] int month)
+    public async Task<IActionResult> GetAll()
     {
         try
         {
-            return Ok(await procedureService.GetAllFromMonth(year, month));
+            return Ok(await procedureService.GetAll());
         }
         catch (Exception ex)
         {
@@ -48,6 +48,24 @@ public class ProcedureController(IProcedureService procedureService) : Controlle
         {
             await procedureService.CancelAppointment(id);
             return Ok();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> UpdateAppointment([FromBody] Procedimento request)
+    {
+        try
+        {
+            await procedureService.UpdateAppointment(request);
+            return Ok();
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest(ex.Message);
         }
         catch (Exception ex)
         {

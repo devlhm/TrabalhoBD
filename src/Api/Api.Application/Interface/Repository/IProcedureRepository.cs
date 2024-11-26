@@ -6,6 +6,9 @@ namespace Api.Application.Interface.Repository;
 public interface IProcedureRepository
 {
     Task Create(Procedimento procedimento);
-    Task<List<Procedimento>> GetAllFromMonth(int month, int year);
+    Task<List<Procedimento>> GetAll();
     Task DeleteById(int id);
+
+    Task Update(Procedimento procedimento);
+    Task<List<MonthBilling>> GetLastYearBilling();
 }

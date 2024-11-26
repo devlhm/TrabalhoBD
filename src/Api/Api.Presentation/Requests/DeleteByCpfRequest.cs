@@ -1,3 +1,3 @@
-namespace Api.Application.Requests;
+namespace Api.Presentation.Requests;
 
 public record DeleteByCpfRequest(string Cpf);

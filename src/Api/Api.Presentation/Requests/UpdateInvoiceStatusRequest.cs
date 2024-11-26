@@ -1,8 +1,8 @@
 using Api.Domain.Enums;
 
-namespace Api.Application.Requests;
+namespace Api.Presentation.Requests;
 
 public record UpdateInvoiceStatusRequest(
-    string Cpf,
+    int InvoiceId,
     EInvoiceStatus Status
     );

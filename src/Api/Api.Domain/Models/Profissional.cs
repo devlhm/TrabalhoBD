@@ -10,6 +10,7 @@ public class Profissional
     public required EProfessionalType Tipo { get; set; }
     public string? Crm { get; set; }
     public string? Cnec { get; set; }
-    
+    public string? Registro { get; set; }
+
     // TODO: ver como vou tratar o salário
 }

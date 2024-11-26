@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luis.moraes\\Documents\\Projetos\\TrabalhoBD\\Api\\Api.Application\\Api.Application.csproj",
+      "projectUniqueName": "C:\\Users\\luis.moraes\\Documents\\Projetos\\trabalho-bd\\src\\Api\\Api.Application\\Api.Application.csproj",
       "projectName": "Api.Application",
-      "projectPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\TrabalhoBD\\Api\\Api.Application\\Api.Application.csproj",
+      "projectPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\trabalho-bd\\src\\Api\\Api.Application\\Api.Application.csproj",
       "packagesPath": "C:\\Users\\luis.moraes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\TrabalhoBD\\Api\\Api.Application\\obj\\",
+      "outputPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\trabalho-bd\\src\\Api\\Api.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -58,8 +58,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\luis.moraes\\Documents\\Projetos\\TrabalhoBD\\Api\\Api.Domain\\Api.Domain.csproj": {
-              "projectPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\TrabalhoBD\\Api\\Api.Domain\\Api.Domain.csproj"
+            "C:\\Users\\luis.moraes\\Documents\\Projetos\\trabalho-bd\\src\\Api\\Api.Domain\\Api.Domain.csproj": {
+              "projectPath": "C:\\Users\\luis.moraes\\Documents\\Projetos\\trabalho-bd\\src\\Api\\Api.Domain\\Api.Domain.csproj"
             }
           }
         }

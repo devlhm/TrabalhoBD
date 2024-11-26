@@ -7,5 +7,7 @@ public interface IProfessionalRepository
 {
     Task Create(Profissional professional);
     Task DeleteByCpf(string cpf);
-    Task<IEnumerable<Profissional>> GetAllByType(EProfessionalType type);
+    Task<Profissional?> GetByCpf(string cpf);
+    Task<List<Profissional>> GetAll();
+    Task Update(Profissional professional);
 }

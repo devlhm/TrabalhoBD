@@ -7,5 +7,8 @@ public interface IInvoiceService
 {
     Task<List<Fatura>> GetClientInvoicesByStatus(string cpf, EInvoiceStatus status);
     Task<Fatura> Create(string cpf);
-    Task UpdateStatus(string cpf, EInvoiceStatus status);
+    Task UpdateStatus(int idFatura, EInvoiceStatus status);
+    Task<InvoiceEntries> GetInvoiceEntries(int id);
+    Task<List<Fatura>> GetAllFromClient(string cpf);
+    Task AddProductEntry(FaturaProduto entry);
 }

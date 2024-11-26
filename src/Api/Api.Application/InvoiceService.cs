@@ -1,3 +1,4 @@
+using System.Reflection;
 using Api.Application.Interface.Repository;
 using Api.Application.Interface.Service;
 using Api.Domain.Enums;
@@ -30,8 +31,40 @@ public class InvoiceService(IInvoiceRepository invoiceRepository): IInvoiceServi
         return fatura;
     }
 
-    public async Task UpdateStatus(string cpf, EInvoiceStatus status)
+    public async Task UpdateStatus(int idFatura, EInvoiceStatus status)
     {
-        await invoiceRepository.UpdateStatus(cpf, status);
+        await invoiceRepository.UpdateStatus(idFatura, status);
+    }
+
+    public async Task<InvoiceEntries> GetInvoiceEntries(int id) {
+        var productEntries = await invoiceRepository.GetInvoiceProducts(id);
+        
+        foreach(var entry in productEntries)
+            entry.Total = entry.Product.ValorUnitario * entry.Quantity;
+
+        var procedures = await invoiceRepository.GetInvoiceProcedures(id);
+
+        return new InvoiceEntries
+        {
+            Products = productEntries,
+            Procedures = procedures,
+        };
+    }
+
+    public async Task<List<Fatura>> GetAllFromClient(string cpf)
+    {
+        var invoices = await invoiceRepository.GetAllFromClient(cpf);
+
+        foreach(var invoice in invoices) {
+            invoice.Entries = await GetInvoiceEntries((int) invoice.Id!);
+            invoice.Total = invoice.Entries.Products.Sum(p => (decimal) p.Total!) + invoice.Entries.Procedures.Sum(p => p.Valor);
+        }
+
+        return invoices;
+    }
+
+    public async Task AddProductEntry(FaturaProduto entry)
+    {
+        await invoiceRepository.AddProductEntry(entry);
     }
 }

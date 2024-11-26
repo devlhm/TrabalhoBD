@@ -4,7 +4,5 @@ public enum EInvoiceStatus
 {
     Open,
     Closed,
-    Paid,
-    Expired,
-    Cancelled
+    Paid
 }
