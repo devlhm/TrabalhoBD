@@ -267,7 +267,7 @@ const Clients: React.FC = () => {
     }
 
     const rgBodyTemplate = (rowData: Client) => {
-        return formatRg(rowData.cpf);
+        return formatRg(rowData.rg);
     }
 
     return (

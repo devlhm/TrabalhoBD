@@ -375,6 +375,7 @@ const Procedures: React.FC = () => {
                             value={procedure!.data}
                             onChange={(e) => onDateInputChange(e, "data")}
                             required
+                            minDate={new Date()}
                             className={classNames({ "p-invalid": submitted && !procedure!.data }, 'p-3 border-2 rounded-lg')}
                         />
                         {submitted && procedure.data == (

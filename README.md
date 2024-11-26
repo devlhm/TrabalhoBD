@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# BeautySoft
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema de gestão para clínicas de estética, incluindo gerenciamento de faturas, agendamentos, clientes e profissionais.
 
-Currently, two official plugins are available:
+## Executando os Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para executar o servidor de desenvolvimento para a API, use:
+```sh
+npm run dev-api
+```
 
-## Expanding the ESLint configuration
+Para executar o servidor de desenvolvimento para o frontend, use:
+```sh
+npm run dev
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para construir o projeto, use:
+```sh
+npm run build
+```
 
-- Configure the top-level `parserOptions` property like this:
+Para visualizar o projeto construído, use:
+```sh
+npm run preview
+```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
+## Typescript + React + Vite
+
+Este template fornece uma configuração mínima para fazer o React funcionar no Vite com HMR (Hot Module Replacement) e algumas regras do ESLint.
+
+Atualmente, dois plugins oficiais estão disponíveis:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) usa [Babel](https://babeljs.io/) para Fast Refresh.
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) usa [SWC](https://swc.rs/) para Fast Refresh.
+
+## Expandindo a configuração do ESLint
+
+Se você está desenvolvendo uma aplicação de produção, recomendamos atualizar a configuração para habilitar regras de lint com reconhecimento de tipos:
+
+1. Configure a propriedade `parserOptions` no nível superior assim:
+
+  ```js
+  export default tseslint.config({
+    languageOptions: {
+    // outras opções...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
     },
-  },
-})
-```
+    },
+  })
+  ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Substitua `tseslint.configs.recommended` por `tseslint.configs.recommendedTypeChecked` ou `tseslint.configs.strictTypeChecked`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. Opcionalmente, adicione `...tseslint.configs.stylisticTypeChecked`.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
+4. Instale [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) e atualize a configuração:
+
+  ```js
+  // eslint.config.js
+  import react from 'eslint-plugin-react'
+
+  export default tseslint.config({
+    // Defina a versão do react
+    settings: { react: { version: '18.3' } },
+    plugins: {
+    // Adicione o plugin react
     react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
+    },
+    rules: {
+    // outras regras...
+    // Habilite suas regras recomendadas
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    },
+  })
+  ```
