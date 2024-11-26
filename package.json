@@ -6,7 +6,7 @@
   "scripts": {
     "dev-api": "dotnet watch --project src/Api/Api.Presentation",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && dotnet build src/Api/Api.Presentation",
     "lint": "eslint .",
     "preview": "vite preview"
   },
