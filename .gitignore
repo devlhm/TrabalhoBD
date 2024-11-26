@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
